@@ -25,10 +25,13 @@ class MethodReflection implements MethodReflectionInterface
     protected $static = false;
     protected $private = false;
 
-    public function __construct(ClassReflection $classReflection, string $name)
+    protected $variants;
+
+    public function __construct(ClassReflection $classReflection, string $name, array $variants)
     {
         $this->classReflection = $classReflection;
         $this->name = $name;
+        $this->variants = $variants;
     }
 
     public function getName(): string
@@ -76,14 +79,6 @@ class MethodReflection implements MethodReflectionInterface
 
     public function getVariants(): array
     {
-        return [
-            new FunctionVariant([
-                new ParameterReflection('message', TypeCombinator::addNull(new StringType()), true),
-                new ParameterReflection('params', TypeCombinator::addNull(new ArrayType(
-                    new StringType(), new MixedType()
-                )) , true),
-                new ParameterReflection('data', TypeCombinator::addNull(new MixedType()), true),
-            ], false, new ObjectType('Exception')),
-        ];
+        return $this->variants;
     }
 }
