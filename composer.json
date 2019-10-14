@@ -24,9 +24,7 @@
             "includes": [
                 "extension.neon"
             ]
-        }
-    },
-    "extra": {
+        },
         "branch-alias": {
             "dev-develop": "0.x-dev"
         }
