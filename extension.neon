@@ -1,5 +1,5 @@
 services:
     -
-        class: DecodeLabs\PHPStan\GlitchReflectionExtension
+        class: DecodeLabs\PHPStan\ReflectionExtension
         tags:
             - phpstan.broker.methodsClassReflectionExtension
