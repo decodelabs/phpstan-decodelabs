@@ -29,7 +29,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension
                 return preg_match('|[.\\/]|', $methodName) || preg_match('/^[A-Z]/', $methodName);
         }
 
-        if ($classReflection->isAnonymous() && strstr($classReflection->getFileName(), 'src/Veneer/Binding.php')) {
+        if ($classReflection->isAnonymous() && strstr((string)$classReflection->getFileName(), 'src/Veneer/Binding.php')) {
             return true;
         }
 
@@ -55,7 +55,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension
                     new FunctionVariant([], true, new MixedType()),
                 ];
 
-                if ($classReflection->isAnonymous() && strstr($classReflection->getFileName(), 'src/Veneer/Binding.php')) {
+                if ($classReflection->isAnonymous() && strstr((string)$classReflection->getFileName(), 'src/Veneer/Binding.php')) {
                     $static = true;
                 }
                 break;
