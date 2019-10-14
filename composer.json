@@ -1,0 +1,22 @@
+{
+    "name": "decodelabs/phpstan-decodelabs",
+    "description": "DecodeLabs PHPStan compatibility extension",
+    "type": "library",
+    "keywords": ["analysis"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Wright",
+            "email": "tom@inflatablecookie.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "phpstan/phpstan": "^0.11.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "DecodeLabs\\PHPStan\\": "src/"
+        }
+    }
+}
