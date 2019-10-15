@@ -1,3 +1,6 @@
+parameters:
+    universalObjectCratesClasses:
+        - DecodeLabs\Collections\Tree\NativeMutable
 services:
     -
         class: DecodeLabs\PHPStan\ReflectionExtension
