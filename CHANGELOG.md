@@ -1,3 +1,6 @@
+## v0.1.4 (2019-10-16)
+* Added early terminators to config
+
 ## v0.1.3 (2019-10-15)
 * Added Collections\Tree as crate object
 
