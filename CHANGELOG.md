@@ -1,3 +1,6 @@
+## v0.1.3 (2019-10-15)
+* Added Collections\Tree as crate object
+
 ## v0.1.2 (2019-10-14)
 * Added phpstan config
 
