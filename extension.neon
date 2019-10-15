@@ -1,6 +1,12 @@
 parameters:
     universalObjectCratesClasses:
         - DecodeLabs\Collections\Tree
+    earlyTerminatingMethodCalls:
+        DecodeLabs\Glitch\Context:
+            - dumpDie
+            - dumpValues
+            - dumpException
+            - incomplete
 services:
     -
         class: DecodeLabs\PHPStan\ReflectionExtension
