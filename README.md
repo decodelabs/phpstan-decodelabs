@@ -1,5 +1,6 @@
 # DecodeLabs PHPStan compatibility extension
 
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/decodelabs/phpstan-decodelabs?style=flat-square)](https://packagist.org/packages/decodelabs/phpstan-decodelabs)
 [![Latest Version](https://img.shields.io/packagist/v/decodelabs/phpstan-decodeLabs.svg?style=flat-square)](https://packagist.org/packages/decodelabs/phpstan-decodeLabs)
 [![Total Downloads](https://img.shields.io/packagist/dt/decodelabs/phpstan-decodeLabs.svg?style=flat-square)](https://packagist.org/packages/decodelabs/phpstan-decodeLabs)
 [![Build Status](https://img.shields.io/travis/decodelabs/phpstan-decodeLabs/develop.svg?style=flat-square)](https://travis-ci.org/decodelabs/phpstan-decodeLabs)
