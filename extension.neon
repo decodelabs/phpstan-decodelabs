@@ -1,12 +1,17 @@
 parameters:
     universalObjectCratesClasses:
         - DecodeLabs\Collections\Tree
+
     earlyTerminatingMethodCalls:
         DecodeLabs\Glitch\Context:
             - dumpDie
             - dumpValues
             - dumpException
             - incomplete
+
+    ignoreErrors:
+        - '#^Caught class ([a-zA-Z0-9_\\]+\\)?E[A-Z][a-zA-Z0-9]+ not found\.$#'
+
 services:
     -
         class: DecodeLabs\PHPStan\ReflectionExtension
