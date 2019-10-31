@@ -1,3 +1,6 @@
+## v0.1.6 (2019-10-31)
+* Expanded ignores for Glitch Exceptions
+
 ## v0.1.5 (2019-10-31)
 * Added ignore for Glitch Exceptions
 
