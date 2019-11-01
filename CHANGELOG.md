@@ -1,3 +1,6 @@
+## v0.1.7 (2019-11-01)
+* Added reportUnmatchedIgnoredErrors
+
 ## v0.1.6 (2019-10-31)
 * Expanded ignores for Glitch Exceptions
 
