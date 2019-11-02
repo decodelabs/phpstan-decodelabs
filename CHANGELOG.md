@@ -1,3 +1,6 @@
+## v0.1.8 (2019-11-02)
+* Added workaround for DOMNode comparison issue
+
 ## v0.1.7 (2019-11-01)
 * Added reportUnmatchedIgnoredErrors
 
