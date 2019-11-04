@@ -1,6 +1,7 @@
 parameters:
     universalObjectCratesClasses:
         - DecodeLabs\Collections\Tree
+        - DecodeLabs\Tagged\Xml\Element
 
     earlyTerminatingMethodCalls:
         DecodeLabs\Glitch\Context:
