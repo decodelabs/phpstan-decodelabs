@@ -1,3 +1,6 @@
+## v0.1.9 (2019-11-04)
+* Added Tagged\Xml\Element as object crate
+
 ## v0.1.8 (2019-11-02)
 * Added workaround for DOMNode comparison issue
 
