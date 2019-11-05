@@ -1,3 +1,6 @@
+## v0.1.10 (2019-11-05)
+* Ignore E* class warnings in root namespace
+
 ## v0.1.9 (2019-11-04)
 * Added Tagged\Xml\Element as object crate
 
