@@ -1,3 +1,9 @@
+## v0.2.0 (2019-11-07)
+* Added property extension for Tagged XML
+* Added property extension for Collections Tree
+* Added dd and dump early terminators
+* Added max level config
+
 ## v0.1.10 (2019-11-05)
 * Ignore E* class warnings in root namespace
 
