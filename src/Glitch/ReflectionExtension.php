@@ -4,7 +4,10 @@
  * @license http://opensource.org/licenses/MIT
  */
 declare(strict_types=1);
-namespace DecodeLabs\PHPStan;
+namespace DecodeLabs\PHPStan\Glitch;
+
+use DecodeLabs\PHPStan\MethodReflection;
+use DecodeLabs\PHPStan\ParameterReflection;
 
 use PHPStan\Reflection\MethodsClassReflectionExtension;
 use PHPStan\Reflection\ClassReflection;

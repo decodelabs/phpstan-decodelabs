@@ -1,7 +1,9 @@
 parameters:
-    universalObjectCratesClasses:
-        - DecodeLabs\Collections\Tree
-        - DecodeLabs\Tagged\Xml\Element
+    level: max
+
+    earlyTerminatingFunctionCalls:
+        - dd
+        - dump
 
     earlyTerminatingMethodCalls:
         DecodeLabs\Glitch\Context:
@@ -22,6 +24,16 @@ parameters:
 
 services:
     -
-        class: DecodeLabs\PHPStan\ReflectionExtension
+        class: DecodeLabs\PHPStan\Glitch\ReflectionExtension
         tags:
             - phpstan.broker.methodsClassReflectionExtension
+
+    -
+        class: DecodeLabs\PHPStan\Collections\TreeReflectionExtension
+        tags:
+            - phpstan.broker.propertiesClassReflectionExtension
+
+    -
+        class: DecodeLabs\PHPStan\Tagged\XmlElementReflectionExtension
+        tags:
+            - phpstan.broker.propertiesClassReflectionExtension
