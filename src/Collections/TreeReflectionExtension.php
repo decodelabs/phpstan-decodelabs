@@ -7,7 +7,6 @@ declare(strict_types=1);
 namespace DecodeLabs\PHPStan\Collections;
 
 use DecodeLabs\PHPStan\PropertyReflection;
-use DecodeLabs\Collections\Tree;
 
 use PHPStan\Reflection\PropertiesClassReflectionExtension;
 use PHPStan\Reflection\ClassReflection;
@@ -31,7 +30,7 @@ class TreeReflectionExtension implements PropertiesClassReflectionExtension, Bro
     public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
     {
         $class = $classReflection->getName();
-        return is_subclass_of($class, Tree::class);
+        return is_subclass_of($class, 'DecodeLabs\\Collections\\Tree');
     }
 
     public function getProperty(ClassReflection $classReflection, string $propertyName): PropertyReflectionInterface
