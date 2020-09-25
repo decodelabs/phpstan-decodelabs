@@ -1,3 +1,6 @@
+## v0.3.2 (2020-09-25)
+* Fixed Glitch early terminating methods
+
 ## v0.3.1 (2020-09-25)
 * Added ignore for Could Not Read File error
 
