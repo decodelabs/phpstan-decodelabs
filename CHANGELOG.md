@@ -1,3 +1,6 @@
+## v0.3.0 (2020-09-25)
+* Updated for PHPStan v0.12
+
 ## v0.2.0 (2019-11-07)
 * Added property extension for Tagged XML
 * Added property extension for Collections Tree
