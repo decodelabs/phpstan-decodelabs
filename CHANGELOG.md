@@ -1,3 +1,6 @@
+## v0.3.1 (2020-09-25)
+* Added ignore for Could Not Read File error
+
 ## v0.3.0 (2020-09-25)
 * Updated for PHPStan v0.12
 
