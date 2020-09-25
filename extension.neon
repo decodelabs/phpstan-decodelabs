@@ -6,7 +6,7 @@ parameters:
         - dump
 
     earlyTerminatingMethodCalls:
-        DecodeLabs\Glitch\Context:
+        DecodeLabs\Glitch:
             - dumpDie
             - dumpValues
             - dumpException
