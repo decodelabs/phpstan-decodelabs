@@ -22,6 +22,9 @@ parameters:
         # DOMDocument->nextSibling === null
         - '#^Strict comparison using === between DOMNode and null will always evaluate to false\.$#'
 
+        # Could not read file
+        - '#^Could not read file\: .*src\/Veneer\/Binding.php\([0-9]+\) \: eval\(\)#'
+
 services:
     -
         class: DecodeLabs\PHPStan\Glitch\ReflectionExtension
