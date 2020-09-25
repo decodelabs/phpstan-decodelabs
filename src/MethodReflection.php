@@ -11,11 +11,13 @@ use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\Reflection\FunctionVariant;
+use PHPStan\Type\Type;
 use PHPStan\Type\TypeCombinator;
 use PHPStan\Type\ObjectType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\ArrayType;
 use PHPStan\Type\MixedType;
+use PHPStan\TrinaryLogic;
 
 class MethodReflection implements MethodReflectionInterface
 {
@@ -80,5 +82,40 @@ class MethodReflection implements MethodReflectionInterface
     public function getVariants(): array
     {
         return $this->variants;
+    }
+
+    public function getDocComment(): ?string
+    {
+        return null;
+    }
+
+    public function isDeprecated(): TrinaryLogic
+    {
+        return TrinaryLogic::createNo();
+    }
+
+    public function getDeprecatedDescription(): ?string
+    {
+        return null;
+    }
+
+    public function isFinal(): TrinaryLogic
+    {
+        return TrinaryLogic::createNo();
+    }
+
+    public function isInternal(): TrinaryLogic
+    {
+        return TrinaryLogic::createNo();
+    }
+
+    public function getThrowType(): ?Type
+    {
+        return null;
+    }
+
+    public function hasSideEffects(): TrinaryLogic
+    {
+        return TrinaryLogic::createMaybe();
     }
 }

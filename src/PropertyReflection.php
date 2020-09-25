@@ -9,6 +9,7 @@ namespace DecodeLabs\PHPStan;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertyReflection as PropertyReflectionInterface;
 use PHPStan\Type\Type;
+use PHPStan\TrinaryLogic;
 
 class PropertyReflection implements PropertyReflectionInterface
 {
@@ -54,5 +55,40 @@ class PropertyReflection implements PropertyReflectionInterface
     public function isWritable(): bool
     {
         return true;
+    }
+
+    public function getDocComment(): ?string
+    {
+        return null;
+    }
+
+    public function getReadableType(): Type
+    {
+        return $this->getType();
+    }
+
+    public function getWritableType(): Type
+    {
+        return $this->getType();
+    }
+
+    public function canChangeTypeAfterAssignment(): bool
+    {
+        return false;
+    }
+
+    public function isDeprecated(): TrinaryLogic
+    {
+        return TrinaryLogic::createNo();
+    }
+
+    public function getDeprecatedDescription(): ?string
+    {
+        return null;
+    }
+
+    public function isInternal(): TrinaryLogic
+    {
+        return TrinaryLogic::createNo();
     }
 }
