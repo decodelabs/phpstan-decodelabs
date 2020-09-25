@@ -7,18 +7,20 @@ declare(strict_types=1);
 namespace DecodeLabs\PHPStan\Glitch;
 
 use DecodeLabs\PHPStan\MethodReflection;
-use DecodeLabs\PHPStan\ParameterReflection;
+use PHPStan\Reflection\Native\NativeParameterReflection as ParameterReflection;
 
 use PHPStan\Reflection\MethodsClassReflectionExtension;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\Reflection\FunctionVariant;
+use PHPStan\Reflection\PassedByReference;
 use PHPStan\Type\TypeCombinator;
 use PHPStan\Type\ObjectType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\ArrayType;
 use PHPStan\Type\MixedType;
+use PHPStan\Type\Generic\TemplateTypeMap;
 
 class ReflectionExtension implements MethodsClassReflectionExtension
 {
@@ -55,7 +57,13 @@ class ReflectionExtension implements MethodsClassReflectionExtension
 
             default:
                 $variants = [
-                    new FunctionVariant([], true, new MixedType()),
+                    new FunctionVariant(
+                        TemplateTypeMap::createEmpty(),
+                        null,
+                        [],
+                        true,
+                        new MixedType()
+                    ),
                 ];
 
                 if ($classReflection->isAnonymous() && strstr((string)$classReflection->getFileName(), 'src/Veneer/Binding.php')) {
@@ -71,13 +79,19 @@ class ReflectionExtension implements MethodsClassReflectionExtension
     protected function getGlitchVariants()
     {
         return [
-            new FunctionVariant([
-                new ParameterReflection('message', TypeCombinator::addNull(new StringType()), true),
-                new ParameterReflection('params', TypeCombinator::addNull(new ArrayType(
-                    new StringType(), new MixedType()
-                )) , true),
-                new ParameterReflection('data', TypeCombinator::addNull(new MixedType()), true),
-            ], false, new ObjectType('Exception')),
+            new FunctionVariant(
+                TemplateTypeMap::createEmpty(),
+                null,
+                [
+                    new ParameterReflection('message', true, TypeCombinator::addNull(new StringType()), PassedByReference::createNo(), false, null),
+                    new ParameterReflection('params', true, TypeCombinator::addNull(new ArrayType(
+                        new StringType(), new MixedType()
+                    )), PassedByReference::createNo(), false, null),
+                    new ParameterReflection('data', true, TypeCombinator::addNull(new MixedType()), PassedByReference::createNo(), false, null),
+                ],
+                false,
+                new ObjectType('Exception')
+            )
         ];
     }
 }

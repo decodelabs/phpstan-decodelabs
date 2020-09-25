@@ -4,15 +4,13 @@
     "type": "phpstan-extension",
     "keywords": ["analysis"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Tom Wright",
-            "email": "tom@inflatablecookie.com"
-        }
-    ],
+    "authors": [{
+        "name": "Tom Wright",
+        "email": "tom@inflatablecookie.com"
+    }],
     "require": {
         "php": "^7.2",
-        "phpstan/phpstan": "^0.11"
+        "phpstan/phpstan": "^0.12.19"
     },
     "autoload": {
         "psr-4": {
