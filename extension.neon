@@ -15,7 +15,7 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         # Exceptions
-        - '#^Caught class ([a-zA-Z0-9_\\]+\\)?E[A-Z][a-zA-Z0-9]+ not found\.$#'
+        - '#^Caught class .+ not found\.$#'
         - '#^Call to method [a-zA-Z0-9_]+\(\) on an unknown class ([a-zA-Z0-9_\\]+\\E[A-Z][a-zA-Z0-9_]+)\.$#'
         - '#^Throwing object of an unknown class ([a-zA-Z0-9_\\]+\\)?E[A-Z][a-zA-Z0-9]+\.$#'
 
@@ -26,6 +26,11 @@ parameters:
         - '#^Could not read file\: .*src\/Veneer\/Binding.php\([0-9]+\) \: eval\(\)#'
 
 services:
+    -
+        class: DecodeLabs\PHPStan\Exceptional\ReflectionExtension
+        tags:
+            - phpstan.broker.methodsClassReflectionExtension
+
     -
         class: DecodeLabs\PHPStan\Glitch\ReflectionExtension
         tags:
