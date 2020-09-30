@@ -16,6 +16,7 @@ use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\Reflection\FunctionVariant;
 use PHPStan\Reflection\PassedByReference;
 use PHPStan\Type\TypeCombinator;
+use PHPStan\Type\NullType;
 use PHPStan\Type\ObjectType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\ArrayType;
@@ -73,7 +74,9 @@ class ReflectionExtension implements MethodsClassReflectionExtension
                 TemplateTypeMap::createEmpty(),
                 null,
                 [
-                    new ParameterReflection('message', true, TypeCombinator::addNull(new StringType()), PassedByReference::createNo(), false, null),
+                    new ParameterReflection('message', true, TypeCombinator::union(new NullType(), new StringType(), new ArrayType(
+                        new StringType(), new MixedType()
+                    )), PassedByReference::createNo(), false, null),
                     new ParameterReflection('params', true, TypeCombinator::addNull(new ArrayType(
                         new StringType(), new MixedType()
                     )), PassedByReference::createNo(), false, null),
