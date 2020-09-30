@@ -1,3 +1,6 @@
+## v0.3.3 (2020-09-30)
+* Added initial support for Exceptional
+
 ## v0.3.2 (2020-09-25)
 * Fixed Glitch early terminating methods
 
