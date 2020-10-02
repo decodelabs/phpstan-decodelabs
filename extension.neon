@@ -12,6 +12,9 @@ parameters:
             - dumpException
             - incomplete
 
+        DecodeLabs\Exceptional:
+            - incomplete
+
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         # Exceptions
