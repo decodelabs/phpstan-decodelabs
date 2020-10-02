@@ -1,3 +1,7 @@
+## v0.3.4 (2020-09-30)
+* Updated Exceptional reflection
+* Removed Glitch unknown class ignore
+
 ## v0.3.3 (2020-09-30)
 * Added initial support for Exceptional
 
