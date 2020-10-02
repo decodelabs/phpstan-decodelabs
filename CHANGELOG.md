@@ -1,3 +1,6 @@
+## v0.3.5 (2020-09-30)
+* Added Exceptional incomplete() early terminator
+
 ## v0.3.4 (2020-09-30)
 * Updated Exceptional reflection
 * Removed Glitch unknown class ignore
