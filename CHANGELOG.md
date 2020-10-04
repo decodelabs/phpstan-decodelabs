@@ -1,3 +1,6 @@
+## v0.3.7 (2020-10-04)
+* Removed exception ignore rules
+
 ## v0.3.6 (2020-10-04)
 * Added Glitch Proxy incomplete() early terminator
 
