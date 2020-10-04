@@ -1,3 +1,6 @@
+## v0.3.9 (2020-10-04)
+* Reverted Veneer cache binding controls
+
 ## v0.3.8 (2020-10-04)
 * Added support for Veneer cached bindings
 
