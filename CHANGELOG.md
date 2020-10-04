@@ -1,3 +1,6 @@
+## v0.3.8 (2020-10-04)
+* Added support for Veneer cached bindings
+
 ## v0.3.7 (2020-10-04)
 * Removed exception ignore rules
 
