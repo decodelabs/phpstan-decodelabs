@@ -1,3 +1,6 @@
+## v0.3.6 (2020-10-04)
+* Added Glitch Proxy incomplete() early terminator
+
 ## v0.3.5 (2020-09-30)
 * Added Exceptional incomplete() early terminator
 
