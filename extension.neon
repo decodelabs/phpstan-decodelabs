@@ -1,5 +1,5 @@
 parameters:
-    level: max
+    level: 5
 
     earlyTerminatingFunctionCalls:
         - dd
@@ -17,11 +17,6 @@ parameters:
 
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
-        # Exceptions
-        - '#^Caught class .+ not found\.$#'
-        #- '#^Call to method [a-zA-Z0-9_]+\(\) on an unknown class ([a-zA-Z0-9_\\]+\\E[A-Z][a-zA-Z0-9_]+)\.$#'
-        - '#^Throwing object of an unknown class ([a-zA-Z0-9_\\]+\\)?E[A-Z][a-zA-Z0-9]+\.$#'
-
         # DOMDocument->nextSibling === null
         - '#^Strict comparison using === between DOMNode and null will always evaluate to false\.$#'
 
