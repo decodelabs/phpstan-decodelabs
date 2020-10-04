@@ -1,6 +1,9 @@
 parameters:
     level: 5
 
+    bootstrapFiles:
+        - %currentWorkingDirectory%/vendor/decodelabs/phpstan-decodelabs/src/bootstrap.php
+
     earlyTerminatingFunctionCalls:
         - dd
         - dump
@@ -15,13 +18,11 @@ parameters:
         DecodeLabs\Glitch\Proxy:
             - incomplete
 
+
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         # DOMDocument->nextSibling === null
         - '#^Strict comparison using === between DOMNode and null will always evaluate to false\.$#'
-
-        # Could not read file
-        - '#^Could not read file\: .*src\/Veneer\/Binding.php\([0-9]+\) \: eval\(\)#'
 
 services:
     -

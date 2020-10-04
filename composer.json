@@ -10,11 +10,11 @@
     }],
     "require": {
         "php": "^7.2",
-        "phpstan/phpstan": "^0.12.19"
+        "phpstan/phpstan": "^0.12.45"
     },
     "autoload": {
         "psr-4": {
-            "DecodeLabs\\PHPStan\\": "src/"
+            "DecodeLabs\\PHPStan\\": "src/PHPStan"
         }
     },
     "extra": {
