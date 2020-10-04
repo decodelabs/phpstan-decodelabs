@@ -12,7 +12,7 @@ parameters:
             - dumpException
             - incomplete
 
-        DecodeLabs\Exceptional:
+        DecodeLabs\Glitch\Proxy:
             - incomplete
 
     reportUnmatchedIgnoredErrors: false
