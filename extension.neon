@@ -1,9 +1,6 @@
 parameters:
     level: 5
 
-    bootstrapFiles:
-        - %currentWorkingDirectory%/vendor/decodelabs/phpstan-decodelabs/src/bootstrap.php
-
     earlyTerminatingFunctionCalls:
         - dd
         - dump
