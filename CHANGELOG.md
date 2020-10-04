@@ -1,3 +1,6 @@
+## v0.3.10 (2020-10-04)
+* Fixed bootstrap config
+
 ## v0.3.9 (2020-10-04)
 * Reverted Veneer cache binding controls
 
