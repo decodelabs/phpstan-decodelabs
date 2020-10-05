@@ -1,3 +1,6 @@
+## v0.3.12 (2020-10-05)
+* Added Tagged HtmlFactory support
+
 ## v0.3.11 (2020-10-04)
 * Added Terminus shortcut handler
 * Removed Glitch handler

@@ -38,6 +38,11 @@ services:
             - phpstan.broker.propertiesClassReflectionExtension
 
     -
+        class: DecodeLabs\PHPStan\Tagged\HtmlReflectionExtension
+        tags:
+            - phpstan.broker.methodsClassReflectionExtension
+
+    -
         class: DecodeLabs\PHPStan\Tagged\XmlElementReflectionExtension
         tags:
             - phpstan.broker.propertiesClassReflectionExtension
