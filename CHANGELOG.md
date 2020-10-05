@@ -1,3 +1,7 @@
+## v0.3.11 (2020-10-04)
+* Added Terminus shortcut handler
+* Removed Glitch handler
+
 ## v0.3.10 (2020-10-04)
 * Fixed bootstrap config
 
