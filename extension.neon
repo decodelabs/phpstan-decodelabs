@@ -23,12 +23,12 @@ parameters:
 
 services:
     -
-        class: DecodeLabs\PHPStan\Exceptional\ReflectionExtension
+        class: DecodeLabs\PHPStan\Terminus\ReflectionExtension
         tags:
             - phpstan.broker.methodsClassReflectionExtension
 
     -
-        class: DecodeLabs\PHPStan\Glitch\ReflectionExtension
+        class: DecodeLabs\PHPStan\Exceptional\ReflectionExtension
         tags:
             - phpstan.broker.methodsClassReflectionExtension
 
