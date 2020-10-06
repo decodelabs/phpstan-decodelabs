@@ -1,23 +1,19 @@
 <?php
+
 /**
- * This file is part of the Glitch package
+ * @package PHPStanDecodeLabs
  * @license http://opensource.org/licenses/MIT
  */
+
 declare(strict_types=1);
+
 namespace DecodeLabs\PHPStan;
 
-use PHPStan\Reflection\MethodsClassReflectionExtension;
-use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\ClassMemberReflection;
+use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
-use PHPStan\Reflection\FunctionVariant;
-use PHPStan\Type\Type;
-use PHPStan\Type\TypeCombinator;
-use PHPStan\Type\ObjectType;
-use PHPStan\Type\StringType;
-use PHPStan\Type\ArrayType;
-use PHPStan\Type\MixedType;
 use PHPStan\TrinaryLogic;
+use PHPStan\Type\Type;
 
 class MethodReflection implements MethodReflectionInterface
 {

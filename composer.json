@@ -12,6 +12,9 @@
         "php": "^7.2",
         "phpstan/phpstan": "^0.12.45"
     },
+    "require-dev": {
+        "symplify/easy-coding-standard": "^8.3"
+    },
     "autoload": {
         "psr-4": {
             "DecodeLabs\\PHPStan\\": "src/"
@@ -26,5 +29,10 @@
         "branch-alias": {
             "dev-develop": "0.3.x-dev"
         }
+    },
+    "scripts": {
+        "analyze": "phpstan analyze",
+        "psr12": "ecs check",
+        "psr12-fix": "ecs check --fix"
     }
 }

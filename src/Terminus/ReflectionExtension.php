@@ -1,23 +1,25 @@
 <?php
+
 /**
- * This file is part of the Glitch package
+ * @package PHPStanDecodeLabs
  * @license http://opensource.org/licenses/MIT
  */
+
 declare(strict_types=1);
+
 namespace DecodeLabs\PHPStan\Terminus;
 
-use DecodeLabs\Veneer\Proxy;
+use DecodeLabs\PHPStan\StaticMethodReflection;
 use DecodeLabs\Terminus\Context;
 use DecodeLabs\Terminus\Session;
+use DecodeLabs\Veneer\Proxy;
 
-use DecodeLabs\PHPStan\StaticMethodReflection;
 use PHPStan\Analyser\OutOfClassScope;
-use PHPStan\Reflection\Native\NativeParameterReflection as ParameterReflection;
+use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
-use PHPStan\Reflection\MethodsClassReflectionExtension;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
-use PHPStan\Broker\Broker;
+use PHPStan\Reflection\MethodsClassReflectionExtension;
 
 class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwareExtension
 {

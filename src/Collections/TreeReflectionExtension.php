@@ -1,32 +1,23 @@
 <?php
+
 /**
- * This file is part of the Glitch package
+ * @package PHPStanDecodeLabs
  * @license http://opensource.org/licenses/MIT
  */
+
 declare(strict_types=1);
+
 namespace DecodeLabs\PHPStan\Collections;
 
 use DecodeLabs\PHPStan\PropertyReflection;
 
-use PHPStan\Reflection\PropertiesClassReflectionExtension;
 use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\PropertiesClassReflectionExtension;
 use PHPStan\Reflection\PropertyReflection as PropertyReflectionInterface;
-use PHPStan\Reflection\FunctionVariant;
-use PHPStan\Type\TypeCombinator;
 use PHPStan\Type\ObjectType;
-use PHPStan\Broker\Broker;
-use PHPStan\Reflection\BrokerAwareExtension;
 
-class TreeReflectionExtension implements PropertiesClassReflectionExtension, BrokerAwareExtension
+class TreeReflectionExtension implements PropertiesClassReflectionExtension
 {
-    private $broker;
-
-    public function setBroker(Broker $broker): void
-    {
-        $this->broker = $broker;
-    }
-
-
     public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
     {
         $class = $classReflection->getName();
