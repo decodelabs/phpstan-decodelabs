@@ -1,3 +1,5 @@
+* Applied full PSR12 standards
+
 ## v0.3.12 (2020-10-05)
 * Added Tagged HtmlFactory support
 
