@@ -56,6 +56,7 @@ class HtmlReflectionExtension implements MethodsClassReflectionExtension, Broker
 
     public function hasMethod(ClassReflection $classReflection, string $methodName): bool
     {
+        /** @phpstan-ignore-next-line */
         return $classReflection->getName() === HtmlFactory::class;
     }
 

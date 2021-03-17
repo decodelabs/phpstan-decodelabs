@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace DecodeLabs\PHPStan\Tagged;
 
+use DecodeLabs\Tagged\Xml\Element as XmlElement;
+
 use DecodeLabs\PHPStan\PropertyReflection;
 
 use PHPStan\Reflection\ClassReflection;
@@ -22,7 +24,8 @@ class XmlElementReflectionExtension implements PropertiesClassReflectionExtensio
 {
     public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
     {
-        return $classReflection->getName() === 'DecodeLabs\\Tagged\\Xml\\Element';
+        /** @phpstan-ignore-next-line */
+        return $classReflection->getName() === XmlElement::class;
     }
 
     public function getProperty(ClassReflection $classReflection, string $propertyName): PropertyReflectionInterface
