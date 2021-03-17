@@ -9,9 +9,8 @@ declare(strict_types=1);
 
 namespace DecodeLabs\PHPStan\Tagged;
 
-use DecodeLabs\Tagged\Xml\Element as XmlElement;
-
 use DecodeLabs\PHPStan\PropertyReflection;
+use DecodeLabs\Tagged\Xml\Element as XmlElement;
 
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertiesClassReflectionExtension;
