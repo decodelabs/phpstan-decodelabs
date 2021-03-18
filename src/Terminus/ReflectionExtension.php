@@ -14,11 +14,13 @@ use DecodeLabs\Terminus\Context;
 use DecodeLabs\Terminus\Session;
 use DecodeLabs\Veneer\Proxy;
 
+use Exception;
 use PHPStan\Analyser\OutOfClassScope;
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
+
 use PHPStan\Reflection\MethodsClassReflectionExtension;
 
 class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwareExtension
@@ -75,6 +77,6 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
             );
         }
 
-        throw new \Exception('Unable to get method');
+        throw new Exception('Unable to get method');
     }
 }
