@@ -1,3 +1,8 @@
+## v0.4.0 (2021-03-18)
+* Added PHP8 support
+* Applied full PSR12 standards
+* Added PSR12 check to Travis build
+
 ## v0.3.12 (2020-10-05)
 * Added Tagged HtmlFactory support
 

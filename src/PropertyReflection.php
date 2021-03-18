@@ -1,15 +1,18 @@
 <?php
+
 /**
- * This file is part of the Glitch package
+ * @package PHPStanDecodeLabs
  * @license http://opensource.org/licenses/MIT
  */
+
 declare(strict_types=1);
+
 namespace DecodeLabs\PHPStan;
 
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertyReflection as PropertyReflectionInterface;
-use PHPStan\Type\Type;
 use PHPStan\TrinaryLogic;
+use PHPStan\Type\Type;
 
 class PropertyReflection implements PropertyReflectionInterface
 {

@@ -1,23 +1,25 @@
 <?php
+
 /**
- * This file is part of the Glitch package
+ * @package PHPStanDecodeLabs
  * @license http://opensource.org/licenses/MIT
  */
+
 declare(strict_types=1);
+
 namespace DecodeLabs\PHPStan\Terminus;
 
-use DecodeLabs\Veneer\Proxy;
+use DecodeLabs\PHPStan\StaticMethodReflection;
 use DecodeLabs\Terminus\Context;
 use DecodeLabs\Terminus\Session;
+use DecodeLabs\Veneer\Proxy;
 
-use DecodeLabs\PHPStan\StaticMethodReflection;
 use PHPStan\Analyser\OutOfClassScope;
-use PHPStan\Reflection\Native\NativeParameterReflection as ParameterReflection;
+use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
-use PHPStan\Reflection\MethodsClassReflectionExtension;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
-use PHPStan\Broker\Broker;
+use PHPStan\Reflection\MethodsClassReflectionExtension;
 
 class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwareExtension
 {
@@ -50,7 +52,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
 
         if (is_a($class, Proxy::class, true)) {
             return $this->getBroker()->getClass($class::VENEER_TARGET)->hasMethod($methodName);
-        } elseif ($class === Context::class) {
+        } elseif ($class === Context::class) { /** @phpstan-ignore-line */
             return $this->getBroker()->getClass(Session::class)->hasMethod($methodName);
         } else {
             return false;
@@ -67,7 +69,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
             );
         }
 
-        if ($class === Context::class) {
+        if ($class === Context::class) { /** @phpstan-ignore-line */
             return new StaticMethodReflection(
                 $this->getBroker()->getClass(Session::class)->getMethod($methodName, new OutOfClassScope())
             );
