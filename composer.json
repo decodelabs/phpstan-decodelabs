@@ -13,8 +13,8 @@
         "phpstan/phpstan": "^0.12.45"
     },
     "require-dev": {
-        "decodelabs/tagged": "^0.8.10",
-        "decodelabs/terminus": "^0.5.8",
+        "decodelabs/tagged": "^0.9.0",
+        "decodelabs/terminus": "^0.6.0",
         "symplify/easy-coding-standard": "^8.3"
     },
     "autoload": {
