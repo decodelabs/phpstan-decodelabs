@@ -23,7 +23,6 @@ class XmlElementReflectionExtension implements PropertiesClassReflectionExtensio
 {
     public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
     {
-        /** @phpstan-ignore-next-line */
         return $classReflection->getName() === XmlElement::class;
     }
 
