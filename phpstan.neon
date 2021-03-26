@@ -2,6 +2,3 @@ parameters:
     paths:
         - src
     level: 5
-
-    ignoreErrors:
-        - '#^Class DecodeLabs.* not found\.#'

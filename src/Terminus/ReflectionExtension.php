@@ -54,7 +54,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
 
         if (is_a($class, Proxy::class, true)) {
             return $this->getBroker()->getClass($class::VENEER_TARGET)->hasMethod($methodName);
-        } elseif ($class === Context::class) { /** @phpstan-ignore-line */
+        } elseif ($class === Context::class) {
             return $this->getBroker()->getClass(Session::class)->hasMethod($methodName);
         } else {
             return false;
@@ -71,7 +71,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
             );
         }
 
-        if ($class === Context::class) { /** @phpstan-ignore-line */
+        if ($class === Context::class) {
             return new StaticMethodReflection(
                 $this->getBroker()->getClass(Session::class)->getMethod($methodName, new OutOfClassScope())
             );
