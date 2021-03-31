@@ -14,11 +14,13 @@ use DecodeLabs\Terminus\Context;
 use DecodeLabs\Terminus\Session;
 use DecodeLabs\Veneer\Proxy;
 
+use Exception;
 use PHPStan\Analyser\OutOfClassScope;
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
+
 use PHPStan\Reflection\MethodsClassReflectionExtension;
 
 class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwareExtension
@@ -52,7 +54,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
 
         if (is_a($class, Proxy::class, true)) {
             return $this->getBroker()->getClass($class::VENEER_TARGET)->hasMethod($methodName);
-        } elseif ($class === Context::class) { /** @phpstan-ignore-line */
+        } elseif ($class === Context::class) {
             return $this->getBroker()->getClass(Session::class)->hasMethod($methodName);
         } else {
             return false;
@@ -69,12 +71,12 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
             );
         }
 
-        if ($class === Context::class) { /** @phpstan-ignore-line */
+        if ($class === Context::class) {
             return new StaticMethodReflection(
                 $this->getBroker()->getClass(Session::class)->getMethod($methodName, new OutOfClassScope())
             );
         }
 
-        throw new \Exception('Unable to get method');
+        throw new Exception('Unable to get method');
     }
 }

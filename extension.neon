@@ -46,3 +46,8 @@ services:
         class: DecodeLabs\PHPStan\Tagged\XmlElementReflectionExtension
         tags:
             - phpstan.broker.propertiesClassReflectionExtension
+
+    -
+        class: DecodeLabs\PHPStan\Exemplar\ElementReflectionExtension
+        tags:
+            - phpstan.broker.propertiesClassReflectionExtension

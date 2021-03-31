@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace DecodeLabs\PHPStan\Tagged;
+namespace DecodeLabs\PHPStan\Exemplar;
 
 use DecodeLabs\PHPStan\PropertyReflection;
-use DecodeLabs\Tagged\Xml\Element as XmlElement;
+use DecodeLabs\Exemplar\Element as XmlElement;
 
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertiesClassReflectionExtension;
@@ -19,7 +19,7 @@ use PHPStan\Type\ArrayType;
 use PHPStan\Type\IntegerType;
 use PHPStan\Type\ObjectType;
 
-class XmlElementReflectionExtension implements PropertiesClassReflectionExtension
+class ElementReflectionExtension implements PropertiesClassReflectionExtension
 {
     public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
     {
