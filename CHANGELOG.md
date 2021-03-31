@@ -1,3 +1,6 @@
+## v0.4.1 (2021-03-31)
+* Added support for Exemplar
+
 ## v0.4.0 (2021-03-18)
 * Added PHP8 support
 * Applied full PSR12 standards
