@@ -17,14 +17,36 @@ use PHPStan\Type\Type;
 
 class MethodReflection implements MethodReflectionInterface
 {
+    /**
+     * @var ClassReflection
+     */
     protected $classReflection;
+
+    /**
+     * @var string
+     */
     protected $name;
 
+
+    /**
+     * @var bool
+     */
     protected $static = false;
+
+    /**
+     * @var bool
+     */
     protected $private = false;
 
+
+    /**
+     * @var array<mixed>
+     */
     protected $variants;
 
+    /**
+     * @param array<mixed> $variants
+     */
     public function __construct(ClassReflection $classReflection, string $name, array $variants)
     {
         $this->classReflection = $classReflection;
@@ -43,7 +65,10 @@ class MethodReflection implements MethodReflectionInterface
     }
 
 
-    public function setStatic(bool $flag)
+    /**
+     * @return $this
+     */
+    public function setStatic(bool $flag): self
     {
         $this->static = $flag;
         return $this;
@@ -54,7 +79,10 @@ class MethodReflection implements MethodReflectionInterface
         return $this->static;
     }
 
-    public function setPrivate(bool $flag)
+    /**
+    * @return $this
+    */
+    public function setPrivate(bool $flag): self
     {
         $this->private = $flag;
         return $this;

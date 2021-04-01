@@ -64,7 +64,10 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
         return new MethodReflection($classReflection, $methodName, $this->getElementVariants());
     }
 
-    protected function getElementVariants()
+    /**
+     * @return array<FunctionVariant>
+     */
+    protected function getElementVariants(): array
     {
         return [
             new FunctionVariant(
