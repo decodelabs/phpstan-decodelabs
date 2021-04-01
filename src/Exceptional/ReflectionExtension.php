@@ -69,7 +69,10 @@ class ReflectionExtension implements MethodsClassReflectionExtension
             ->setStatic($static);
     }
 
-    protected function getExceptionVariants()
+    /**
+     * @return array<FunctionVariant>
+     */
+    protected function getExceptionVariants(): array
     {
         return [
             new FunctionVariant(

@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace DecodeLabs\PHPStan\Exemplar;
 
-use DecodeLabs\PHPStan\PropertyReflection;
 use DecodeLabs\Exemplar\Element as XmlElement;
+use DecodeLabs\PHPStan\PropertyReflection;
 
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertiesClassReflectionExtension;

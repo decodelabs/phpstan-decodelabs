@@ -11,8 +11,8 @@ namespace DecodeLabs\PHPStan\Tagged;
 
 use DecodeLabs\PHPStan\MethodReflection;
 
-use DecodeLabs\Tagged\Html\Element;
-use DecodeLabs\Tagged\Html\Factory as HtmlFactory;
+use DecodeLabs\Tagged\Element;
+use DecodeLabs\Tagged\Factory as HtmlFactory;
 
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
@@ -29,7 +29,7 @@ use PHPStan\Type\ObjectType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\TypeCombinator;
 
-class HtmlReflectionExtension implements MethodsClassReflectionExtension, BrokerAwareExtension
+class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwareExtension
 {
     /**
      * @var \PHPStan\Broker\Broker
@@ -64,7 +64,10 @@ class HtmlReflectionExtension implements MethodsClassReflectionExtension, Broker
         return new MethodReflection($classReflection, $methodName, $this->getElementVariants());
     }
 
-    protected function getElementVariants()
+    /**
+     * @return array<FunctionVariant>
+     */
+    protected function getElementVariants(): array
     {
         return [
             new FunctionVariant(

@@ -1,3 +1,7 @@
+## v0.5.0 (2021-04-01)
+* Updated to match Tagged refactoring
+* Fixed interfaces for max PHPStan conformance
+
 ## v0.4.1 (2021-03-31)
 * Added support for Exemplar
 
