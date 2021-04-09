@@ -13,9 +13,9 @@
         "phpstan/phpstan": "^0.12.45"
     },
     "require-dev": {
-        "decodelabs/tagged": "^0.11.0",
-        "decodelabs/exemplar": "^0.1.0",
-        "decodelabs/terminus": "^0.6.0",
+        "decodelabs/tagged": "^0.11",
+        "decodelabs/exemplar": "^0.1",
+        "decodelabs/terminus": "^0.7",
         "symplify/easy-coding-standard": "^8.3"
     },
     "autoload": {
