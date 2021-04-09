@@ -1,3 +1,6 @@
+## v0.5.2 (2021-04-09)
+* Updated Exemplar dependency
+
 ## v0.5.1 (2021-04-09)
 * Updated dependencies
 
