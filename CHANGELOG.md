@@ -1,3 +1,6 @@
+## v0.5.1 (2021-04-09)
+* Updated dependencies
+
 ## v0.5.0 (2021-04-01)
 * Updated to match Tagged refactoring
 * Fixed interfaces for max PHPStan conformance
