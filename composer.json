@@ -10,13 +10,13 @@
     }],
     "require": {
         "php": "^7.2|^8.0",
-        "phpstan/phpstan": "^0.12.45"
+        "phpstan/phpstan": "^0.12.45|^1"
     },
     "require-dev": {
         "decodelabs/tagged": "^0.11",
         "decodelabs/exemplar": "^0.2",
         "decodelabs/terminus": "^0.7",
-        "symplify/easy-coding-standard": "^8.3"
+        "symplify/easy-coding-standard": "^10"
     },
     "autoload": {
         "psr-4": {
