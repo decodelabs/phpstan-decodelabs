@@ -38,6 +38,11 @@ services:
             - phpstan.broker.propertiesClassReflectionExtension
 
     -
+        class: DecodeLabs\PHPStan\Metamorph\ReflectionExtension
+        tags:
+            - phpstan.broker.methodsClassReflectionExtension
+
+    -
         class: DecodeLabs\PHPStan\Tagged\ReflectionExtension
         tags:
             - phpstan.broker.methodsClassReflectionExtension
