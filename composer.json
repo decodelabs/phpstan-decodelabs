@@ -15,7 +15,7 @@
     "require-dev": {
         "decodelabs/tagged": "^0.13",
         "decodelabs/exemplar": "^0.2",
-        "decodelabs/metamorph": "^0.2",
+        "decodelabs/metamorph": "^0.3",
         "decodelabs/terminus": "^0.7",
         "symplify/easy-coding-standard": "^10"
     },
