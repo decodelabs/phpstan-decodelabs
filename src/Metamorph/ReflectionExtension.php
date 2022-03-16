@@ -82,7 +82,7 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
                     )), PassedByReference::createNo(), false, null)
                 ],
                 false,
-                new StringType()
+                TypeCombinator::addNull(new StringType())
             )
         ];
     }
