@@ -1,3 +1,6 @@
+## v0.5.5 (2022-03-16)
+* Updated Metamorph output signature
+
 ## v0.5.4 (2022-03-13)
 * Added Metamorph support
 
