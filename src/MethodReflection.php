@@ -12,6 +12,7 @@ namespace DecodeLabs\PHPStan;
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\FunctionVariant;
+use PHPStan\Reflection\ParameterReflection;
 use PHPStan\Reflection\ParametersAcceptor;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\TrinaryLogic;
@@ -134,7 +135,7 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
 
 
     /**
-     * @param array<ParametersAcceptor>
+     * @param array<ParameterReflection> $params
      */
     public static function alterVariant(
         FunctionVariant $variant,

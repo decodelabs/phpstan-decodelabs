@@ -16,6 +16,7 @@ use DecodeLabs\Metamorph;
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
 use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\FunctionVariant;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\Reflection\MethodsClassReflectionExtension;
 
@@ -47,12 +48,17 @@ class ReflectionExtension implements
         string $methodName
     ): MethodReflectionInterface {
         $method = $this->broker->getClass(Metamorph::class)->getNativeMethod('convert');
+
+        /**
+         * @var FunctionVariant $variant
+         */
         $variant = $method->getVariants()[0];
         $params = array_slice($variant->getParameters(), 1);
         $newVariant = MethodReflection::alterVariant($variant, $params);
 
         $output = new MethodReflection($classReflection, $methodName, [$newVariant]);
         $output->setStatic(true);
+
         return $output;
     }
 }
