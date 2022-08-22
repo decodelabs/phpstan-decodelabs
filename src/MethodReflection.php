@@ -11,10 +11,12 @@ namespace DecodeLabs\PHPStan;
 
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\FunctionVariant;
 use PHPStan\Reflection\ParametersAcceptor;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\TrinaryLogic;
 use PHPStan\Type\Type;
+use PHPStan\Type\Generic\TemplateTypeMap;
 
 class MethodReflection implements MethodReflectionInterface, ClassMemberReflection
 {
@@ -128,5 +130,23 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
     public function hasSideEffects(): TrinaryLogic
     {
         return TrinaryLogic::createMaybe();
+    }
+
+
+    /**
+     * @param array<ParametersAcceptor>
+     */
+    public static function alterVariant(
+        FunctionVariant $variant,
+        array $params,
+        ?Type $returnType = null
+    ): FunctionVariant {
+        return new FunctionVariant(
+            TemplateTypeMap::createEmpty(),
+            null,
+            $params,
+            $variant->isVariadic(),
+            $returnType ?? $variant->getReturnType()
+        );
     }
 }
