@@ -16,18 +16,13 @@ use PHPStan\Type\Type;
 
 class PropertyReflection implements PropertyReflectionInterface
 {
-    /**
-     * @var ClassReflection
-     */
-    private $declaringClass;
+    private ClassReflection $declaringClass;
+    private Type $type;
 
-    /**
-     * @var Type
-     */
-    private $type;
-
-    public function __construct(ClassReflection $declaringClass, Type $type)
-    {
+    public function __construct(
+        ClassReflection $declaringClass,
+        Type $type
+    ) {
         $this->declaringClass = $declaringClass;
         $this->type = $type;
     }

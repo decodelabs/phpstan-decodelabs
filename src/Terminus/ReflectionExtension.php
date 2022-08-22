@@ -25,31 +25,22 @@ use PHPStan\Reflection\MethodsClassReflectionExtension;
 
 class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwareExtension
 {
-    /**
-     * @var \PHPStan\Broker\Broker
-     */
-    protected $broker;
+    protected Broker $broker;
 
-    /**
-     * @param \PHPStan\Broker\Broker $broker
-     */
     public function setBroker(Broker $broker): void
     {
         $this->broker = $broker;
     }
 
-    /**
-     * Returns the current broker.
-     *
-     * @return \PHPStan\Broker\Broker
-     */
     public function getBroker(): Broker
     {
         return $this->broker;
     }
 
-    public function hasMethod(ClassReflection $classReflection, string $methodName): bool
-    {
+    public function hasMethod(
+        ClassReflection $classReflection,
+        string $methodName
+    ): bool {
         $class = $classReflection->getName();
 
         if (is_a($class, Proxy::class, true)) {
@@ -61,8 +52,10 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
         }
     }
 
-    public function getMethod(ClassReflection $classReflection, string $methodName): MethodReflectionInterface
-    {
+    public function getMethod(
+        ClassReflection $classReflection,
+        string $methodName
+    ): MethodReflectionInterface {
         $class = $classReflection->getName();
 
         if (is_a($class, Proxy::class, true)) {

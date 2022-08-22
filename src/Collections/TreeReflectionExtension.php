@@ -18,14 +18,18 @@ use PHPStan\Type\ObjectType;
 
 class TreeReflectionExtension implements PropertiesClassReflectionExtension
 {
-    public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
-    {
+    public function hasProperty(
+        ClassReflection $classReflection,
+        string $propertyName
+    ): bool {
         $class = $classReflection->getName();
         return is_subclass_of($class, 'DecodeLabs\\Collections\\Tree');
     }
 
-    public function getProperty(ClassReflection $classReflection, string $propertyName): PropertyReflectionInterface
-    {
+    public function getProperty(
+        ClassReflection $classReflection,
+        string $propertyName
+    ): PropertyReflectionInterface {
         return new PropertyReflection($classReflection, new ObjectType($classReflection->getName()));
     }
 }

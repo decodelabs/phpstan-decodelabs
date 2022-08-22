@@ -21,13 +21,17 @@ use PHPStan\Type\ObjectType;
 
 class ElementReflectionExtension implements PropertiesClassReflectionExtension
 {
-    public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
-    {
+    public function hasProperty(
+        ClassReflection $classReflection,
+        string $propertyName
+    ): bool {
         return $classReflection->getName() === XmlElement::class;
     }
 
-    public function getProperty(ClassReflection $classReflection, string $propertyName): PropertyReflectionInterface
-    {
+    public function getProperty(
+        ClassReflection $classReflection,
+        string $propertyName
+    ): PropertyReflectionInterface {
         return new PropertyReflection($classReflection, new ArrayType(
             new IntegerType(),
             new ObjectType($classReflection->getName())
