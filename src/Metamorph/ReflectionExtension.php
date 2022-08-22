@@ -60,30 +60,13 @@ class ReflectionExtension implements MethodsClassReflectionExtension, BrokerAwar
 
     public function getMethod(ClassReflection $classReflection, string $methodName): MethodReflectionInterface
     {
-        $output = new MethodReflection($classReflection, $methodName, $this->getElementVariants());
+        $method = $this->broker->getClass(Metamorph::class)->getNativeMethod('convert');
+        $variant = $method->getVariants()[0];
+        $params = $variant->getParameters();
+        array_shift($params);
+
+        $output = new MethodReflection($classReflection, $methodName, [$variant]);
         $output->setStatic(true);
         return $output;
-    }
-
-    /**
-     * @return array<FunctionVariant>
-     */
-    protected function getElementVariants(): array
-    {
-        return [
-            new FunctionVariant(
-                TemplateTypeMap::createEmpty(),
-                null,
-                [
-                    new ParameterReflection('content', true, TypeCombinator::addNull(new MixedType()), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('options', true, TypeCombinator::addNull(new ArrayType(
-                        new StringType(),
-                        new MixedType()
-                    )), PassedByReference::createNo(), false, null)
-                ],
-                false,
-                TypeCombinator::addNull(new StringType())
-            )
-        ];
     }
 }

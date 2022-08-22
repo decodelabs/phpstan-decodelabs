@@ -11,44 +11,31 @@ namespace DecodeLabs\PHPStan;
 
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\ParametersAcceptor;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\TrinaryLogic;
 use PHPStan\Type\Type;
 
-class MethodReflection implements MethodReflectionInterface
+class MethodReflection implements MethodReflectionInterface, ClassMemberReflection
 {
-    /**
-     * @var ClassReflection
-     */
-    protected $classReflection;
+    protected ClassReflection $classReflection;
+    protected string $name;
+    protected bool $static = false;
+    protected bool $private = false;
 
     /**
-     * @var string
+     * @var array<ParametersAcceptor>
      */
-    protected $name;
-
+    protected array $variants;
 
     /**
-     * @var bool
+     * @param array<ParametersAcceptor> $variants
      */
-    protected $static = false;
-
-    /**
-     * @var bool
-     */
-    protected $private = false;
-
-
-    /**
-     * @var array<mixed>
-     */
-    protected $variants;
-
-    /**
-     * @param array<mixed> $variants
-     */
-    public function __construct(ClassReflection $classReflection, string $name, array $variants)
-    {
+    public function __construct(
+        ClassReflection $classReflection,
+        string $name,
+        array $variants
+    ) {
         $this->classReflection = $classReflection;
         $this->name = $name;
         $this->variants = $variants;
