@@ -48,9 +48,7 @@ class ReflectionExtension implements
     ): MethodReflectionInterface {
         $method = $this->broker->getClass(HtmlFactory::class)->getNativeMethod('el');
 
-        /**
-         * @var FunctionVariant $variant
-         */
+        /** @var FunctionVariant $variant */
         $variant = $method->getVariants()[0];
         $params = array_slice($variant->getParameters(), 1);
         $newVariant = MethodReflection::alterVariant($variant, $params);

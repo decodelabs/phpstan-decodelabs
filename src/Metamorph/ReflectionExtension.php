@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace DecodeLabs\PHPStan\Metamorph;
 
-use DecodeLabs\PHPStan\MethodReflection;
 use DecodeLabs\Metamorph;
+use DecodeLabs\PHPStan\MethodReflection;
 
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
@@ -48,9 +48,7 @@ class ReflectionExtension implements
     ): MethodReflectionInterface {
         $method = $this->broker->getClass(Metamorph::class)->getNativeMethod('convert');
 
-        /**
-         * @var FunctionVariant $variant
-         */
+        /** @var FunctionVariant $variant */
         $variant = $method->getVariants()[0];
         $params = array_slice($variant->getParameters(), 1);
         $newVariant = MethodReflection::alterVariant($variant, $params);
