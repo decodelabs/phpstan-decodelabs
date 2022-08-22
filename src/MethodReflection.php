@@ -12,12 +12,12 @@ namespace DecodeLabs\PHPStan;
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\FunctionVariant;
+use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\Reflection\ParameterReflection;
 use PHPStan\Reflection\ParametersAcceptor;
-use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\TrinaryLogic;
-use PHPStan\Type\Type;
 use PHPStan\Type\Generic\TemplateTypeMap;
+use PHPStan\Type\Type;
 
 class MethodReflection implements MethodReflectionInterface, ClassMemberReflection
 {

@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace DecodeLabs\PHPStan\Exceptional;
 
-use DecodeLabs\PHPStan\MethodReflection;
 use DecodeLabs\Exceptional;
 use DecodeLabs\Exceptional\Factory as ExceptionalFactory;
+use DecodeLabs\PHPStan\MethodReflection;
 
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\BrokerAwareExtension;
@@ -55,9 +55,7 @@ class ReflectionExtension implements
     ): MethodReflectionInterface {
         $method = $this->broker->getClass(ExceptionalFactory::class)->getNativeMethod('create');
 
-        /**
-         * @var FunctionVariant $variant
-         */
+        /** @var FunctionVariant $variant */
         $variant = $method->getVariants()[0];
         $params = array_slice($variant->getParameters(), 2);
         $newVariant = MethodReflection::alterVariant($variant, $params);

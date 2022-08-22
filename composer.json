@@ -13,11 +13,11 @@
         "phpstan/phpstan": "^1"
     },
     "require-dev": {
-        "decodelabs/tagged": "^0.13",
-        "decodelabs/exemplar": "^0.2",
-        "decodelabs/metamorph": "^0.3",
-        "decodelabs/terminus": "^0.7",
-        "symplify/easy-coding-standard": "^10"
+        "decodelabs/tagged": "^0.13|^0.14",
+        "decodelabs/exemplar": "^0.2|^0.3",
+        "decodelabs/metamorph": "^0.3|^0.4",
+        "decodelabs/terminus": "^0.7|^0.8",
+        "symplify/easy-coding-standard": "^11"
     },
     "autoload": {
         "psr-4": {
