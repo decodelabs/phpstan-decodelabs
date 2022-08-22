@@ -10,102 +10,61 @@ declare(strict_types=1);
 namespace DecodeLabs\PHPStan\Exceptional;
 
 use DecodeLabs\PHPStan\MethodReflection;
+use DecodeLabs\Exceptional;
+use DecodeLabs\Exceptional\Factory as ExceptionalFactory;
 
+use PHPStan\Broker\Broker;
+use PHPStan\Reflection\BrokerAwareExtension;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\FunctionVariant;
 use PHPStan\Reflection\MethodReflection as MethodReflectionInterface;
 use PHPStan\Reflection\MethodsClassReflectionExtension;
-use PHPStan\Reflection\Native\NativeParameterReflection as ParameterReflection;
-use PHPStan\Reflection\PassedByReference;
-use PHPStan\Type\ArrayType;
-use PHPStan\Type\Generic\TemplateTypeMap;
-use PHPStan\Type\IntegerType;
-use PHPStan\Type\MixedType;
-use PHPStan\Type\NullType;
-use PHPStan\Type\ObjectType;
-use PHPStan\Type\StringType;
-use PHPStan\Type\TypeCombinator;
 
-class ReflectionExtension implements MethodsClassReflectionExtension
+class ReflectionExtension implements
+    MethodsClassReflectionExtension,
+    BrokerAwareExtension
 {
-    public function hasMethod(ClassReflection $classReflection, string $methodName): bool
-    {
-        switch ($classReflection->getName()) {
-            case 'DecodeLabs\\Exceptional':
-                return preg_match('|[.\\\\/]|', $methodName) || preg_match('/^[A-Z]/', $methodName);
-        }
+    protected Broker $broker;
 
-        return false;
+    public function setBroker(Broker $broker): void
+    {
+        $this->broker = $broker;
     }
 
-    public function getMethod(ClassReflection $classReflection, string $methodName): MethodReflectionInterface
+    public function getBroker(): Broker
     {
-        $static = false;
-
-        switch ($classReflection->getName()) {
-            case 'DecodeLabs\\Exceptional':
-                $static = true;
-                $variants = $this->getExceptionVariants();
-                break;
-
-            default:
-                $variants = [
-                    new FunctionVariant(
-                        TemplateTypeMap::createEmpty(),
-                        null,
-                        [],
-                        true,
-                        new MixedType()
-                    ),
-                ];
-
-                if ($classReflection->isAnonymous() && strstr((string)$classReflection->getFileName(), 'src/Veneer/Binding.php')) {
-                    $static = true;
-                }
-                break;
-        }
-
-        return (new MethodReflection($classReflection, $methodName, $variants))
-            ->setStatic($static);
+        return $this->broker;
     }
 
-    /**
-     * @return array<FunctionVariant>
-     */
-    protected function getExceptionVariants(): array
-    {
-        return [
-            new FunctionVariant(
-                TemplateTypeMap::createEmpty(),
-                null,
-                [
-                    new ParameterReflection('message', true, TypeCombinator::union(new NullType(), new StringType(), new ArrayType(
-                        new StringType(),
-                        new MixedType()
-                    )), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('params', true, TypeCombinator::addNull(new ArrayType(
-                        new StringType(),
-                        new MixedType()
-                    )), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('data', true, TypeCombinator::addNull(new MixedType()), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('previous', true, TypeCombinator::addNull(new ObjectType('Throwable')), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('code', true, TypeCombinator::addNull(new IntegerType()), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('file', true, TypeCombinator::addNull(new StringType()), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('line', true, TypeCombinator::addNull(new IntegerType()), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('http', true, TypeCombinator::addNull(new IntegerType()), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('namespace', true, TypeCombinator::addNull(new StringType()), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('interfaces', true, TypeCombinator::addNull(new ArrayType(
-                        new IntegerType(),
-                        new StringType()
-                    )), PassedByReference::createNo(), false, null),
-                    new ParameterReflection('traits', true, TypeCombinator::addNull(new ArrayType(
-                        new IntegerType(),
-                        new StringType()
-                    )), PassedByReference::createNo(), false, null)
-                ],
-                false,
-                new ObjectType('Exception')
-            )
-        ];
+    public function hasMethod(
+        ClassReflection $classReflection,
+        string $methodName
+    ): bool {
+        if ($classReflection->getName() !== Exceptional::class) {
+            return false;
+        }
+
+        return
+            preg_match('|[.\\\\/]|', $methodName) ||
+            preg_match('/^[A-Z]/', $methodName);
+    }
+
+    public function getMethod(
+        ClassReflection $classReflection,
+        string $methodName
+    ): MethodReflectionInterface {
+        $method = $this->broker->getClass(ExceptionalFactory::class)->getNativeMethod('create');
+
+        /**
+         * @var FunctionVariant $variant
+         */
+        $variant = $method->getVariants()[0];
+        $params = array_slice($variant->getParameters(), 2);
+        $newVariant = MethodReflection::alterVariant($variant, $params);
+
+        $output = new MethodReflection($classReflection, $methodName, [$newVariant]);
+        $output->setStatic(true);
+
+        return $output;
     }
 }

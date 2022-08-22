@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace DecodeLabs\PHPStan\Metamorph;
 
 use DecodeLabs\PHPStan\MethodReflection;
-
 use DecodeLabs\Metamorph;
 
 use PHPStan\Broker\Broker;

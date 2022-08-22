@@ -150,4 +150,23 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
             $returnType ?? $variant->getReturnType()
         );
     }
+
+    /**
+     * @param array<ParameterReflection> $params
+     */
+    public static function dumpParams(
+        array $params
+    ): void {
+        $test = [];
+
+        foreach ($params as $param) {
+            $test[] = $param->getName();
+        }
+
+        if (function_exists('dd')) {
+            dd($test);
+        } else {
+            var_dump($test);
+        }
+    }
 }
