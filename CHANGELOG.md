@@ -1,6 +1,7 @@
 ## v0.6.0 (2022-08-22)
 * Removed PHP7 compatibility
 * Rewrote Metamorph variant provider
+* Rewrote Exceptional variant provider
 
 ## v0.5.5 (2022-03-16)
 * Updated Metamorph output signature
