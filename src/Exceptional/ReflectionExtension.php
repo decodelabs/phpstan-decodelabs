@@ -57,10 +57,14 @@ class ReflectionExtension implements
 
         /** @var FunctionVariant $variant */
         $variant = $method->getVariants()[0];
-        $params = array_slice($variant->getParameters(), 2);
-        $newVariant = MethodReflection::alterVariant($variant, $params);
 
-        $output = new MethodReflection($classReflection, $methodName, [$newVariant]);
+        $params = array_slice($variant->getParameters(), 2);
+        $newVariant1 = MethodReflection::alterVariant($variant, $params);
+
+        $params = array_slice($variant->getParameters(), 3);
+        $newVariant2 = MethodReflection::alterVariant($variant, $params);
+
+        $output = new MethodReflection($classReflection, $methodName, [$newVariant1, $newVariant2]);
         $output->setStatic(true);
 
         return $output;
