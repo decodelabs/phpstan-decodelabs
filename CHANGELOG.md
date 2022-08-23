@@ -1,3 +1,6 @@
+## v0.6.1 (2022-08-23)
+* Added no-message Exceptional variant
+
 ## v0.6.0 (2022-08-22)
 * Removed PHP7 compatibility
 * Rewrote Metamorph variant provider
