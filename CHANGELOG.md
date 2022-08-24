@@ -1,3 +1,4 @@
+* Updated CI environment
 * Added concrete types to all members
 
 ## v0.6.1 (2022-08-23)
