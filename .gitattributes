@@ -4,7 +4,6 @@
 .gitignore export-ignore
 CHANGELOG.md export-ignore
 ecs.php export-ignore
-extension.neon export-ignore
 phpstan.neon export-ignore
 phpunit.xml.dist export-ignore
 docs/ export-ignore
