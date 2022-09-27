@@ -1,5 +1,6 @@
-* Updated CI environment
+* Updated composer check script
 * Added concrete types to all members
+* Updated CI environment
 
 ## v0.6.1 (2022-08-23)
 * Added no-message Exceptional variant
