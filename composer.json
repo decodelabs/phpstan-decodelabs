@@ -19,7 +19,7 @@
         "decodelabs/tagged": "^0.14",
         "decodelabs/exemplar": "^0.3",
         "decodelabs/metamorph": "^0.5",
-        "decodelabs/terminus": "^0.8"
+        "decodelabs/terminus": "^0.9"
     },
     "autoload": {
         "psr-4": {
