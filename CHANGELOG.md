@@ -1,3 +1,4 @@
+* Fixed PHP8.1 testing
 * Updated composer check script
 * Added concrete types to all members
 * Updated CI environment
