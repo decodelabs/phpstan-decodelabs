@@ -32,7 +32,7 @@ jobs:
 
       - name: "Check exported files"
         run: |
-          EXPECTED="LICENSE,README.md,composer.json"
+          EXPECTED="LICENSE,README.md,composer.json,extension.neon"
           CURRENT="$(git archive HEAD | tar --list --exclude="src" --exclude="src/*" | paste -s -d ",")"
           echo "CURRENT =${CURRENT}"
           echo "EXPECTED=${EXPECTED}"
