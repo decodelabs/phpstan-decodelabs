@@ -1,3 +1,6 @@
+## v0.6.5 (2022-11-23)
+* Added support for lucid list processors
+
 ## v0.6.4 (2022-11-23)
 * Made Lucid a full dependency
 

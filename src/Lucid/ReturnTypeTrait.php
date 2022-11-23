@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace DecodeLabs\PHPStan\Lucid;
 
+use DecodeLabs\Lucid\Processor\ListNative as ListProcessor;
 use DecodeLabs\Lucid\Sanitizer\ValueContainer;
 
 use PhpParser\Node\Expr\MethodCall;
@@ -16,6 +17,8 @@ use PhpParser\Node\Expr\StaticCall;
 use PHPStan\Analyser\Scope;
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\MethodReflection;
+use PHPStan\Type\ArrayType;
+use PHPStan\Type\MixedType;
 use PHPStan\Type\NullType;
 use PHPStan\Type\Type;
 use PHPStan\Type\UnionType;
@@ -57,6 +60,15 @@ trait ReturnTypeTrait
         $type = $methodCall->getArgs()[$this->getArgIndex()]->value->value;
         $nullable = substr($type, 0, 1) === '?';
         $processor = (new ValueContainer('test'))->loadProcessor($type);
+        $listProc = null;
+
+        if (
+            ($list = $processor instanceof ListProcessor) &&
+            null !== ($inner = $processor->getChildType())
+        ) {
+            $listProc = $processor;
+            $processor = $inner;
+        }
 
         $method = $this->broker->getClass(
             get_class($processor)
@@ -81,6 +93,14 @@ trait ReturnTypeTrait
             } else {
                 $output = new UnionType($types);
             }
+        }
+
+        // List type
+        if ($list && $listProc) {
+            $output = new ArrayType(
+                new MixedType(),
+                $output
+            );
         }
 
         return $output;
