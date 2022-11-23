@@ -25,7 +25,11 @@ class ElementReflectionExtension implements PropertiesClassReflectionExtension
         ClassReflection $classReflection,
         string $propertyName
     ): bool {
-        return $classReflection->getName() === XmlElement::class;
+        $class = $classReflection->getName();
+
+        return
+            $class == XmlElement::class ||
+            is_subclass_of($class, XmlElement::class);
     }
 
     public function getProperty(

@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace DecodeLabs\PHPStan\Collections;
 
+use DecodeLabs\Collections\Tree;
 use DecodeLabs\PHPStan\PropertyReflection;
 
 use PHPStan\Reflection\ClassReflection;
@@ -23,7 +24,10 @@ class TreeReflectionExtension implements PropertiesClassReflectionExtension
         string $propertyName
     ): bool {
         $class = $classReflection->getName();
-        return is_subclass_of($class, 'DecodeLabs\\Collections\\Tree');
+
+        return
+            $class == Tree::class ||
+            is_subclass_of($class, Tree::class);
     }
 
     public function getProperty(
