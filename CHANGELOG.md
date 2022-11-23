@@ -1,3 +1,6 @@
+## v0.6.4 (2022-11-23)
+* Made Lucid a full dependency
+
 ## v0.6.3 (2022-11-23)
 * Added Lucid return type extensions
 
