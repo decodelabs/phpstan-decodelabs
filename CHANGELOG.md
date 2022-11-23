@@ -1,4 +1,4 @@
-## v0.6.1 (2022-11-23)
+## v0.6.2 (2022-11-23)
 * Fixed Tree reflection type test
 * Migrated to use effigy in CI workflow
 * Fixed PHP8.1 testing
