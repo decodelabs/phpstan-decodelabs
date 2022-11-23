@@ -1,3 +1,6 @@
+## v0.6.3 (2022-11-23)
+* Added Lucid return type extensions
+
 ## v0.6.2 (2022-11-23)
 * Fixed Tree reflection type test
 * Migrated to use effigy in CI workflow
