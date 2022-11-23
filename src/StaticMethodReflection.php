@@ -17,8 +17,7 @@ use PHPStan\Type\Type;
 
 class StaticMethodReflection implements MethodReflection
 {
-    /** @var MethodReflection */
-    private $methodReflection;
+    private MethodReflection $methodReflection;
 
     public function __construct(MethodReflection $methodReflection)
     {

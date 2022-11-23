@@ -154,9 +154,8 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
     /**
      * @param array<ParameterReflection> $params
      */
-    public static function dumpParams(
-        array $params
-    ): void {
+    public static function dumpParams(array $params): void
+    {
         $test = [];
 
         foreach ($params as $param) {

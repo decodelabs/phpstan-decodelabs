@@ -1,3 +1,11 @@
+## v0.6.2 (2022-11-23)
+* Fixed Tree reflection type test
+* Migrated to use effigy in CI workflow
+* Fixed PHP8.1 testing
+* Updated composer check script
+* Added concrete types to all members
+* Updated CI environment
+
 ## v0.6.1 (2022-08-23)
 * Added no-message Exceptional variant
 

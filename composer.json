@@ -15,9 +15,8 @@
     "require-dev": {
         "decodelabs/tagged": "^0.14",
         "decodelabs/exemplar": "^0.3",
-        "decodelabs/metamorph": "^0.4",
-        "decodelabs/terminus": "^0.8",
-        "symplify/easy-coding-standard": "^11"
+        "decodelabs/metamorph": "^0.5",
+        "decodelabs/terminus": "^0.9"
     },
     "autoload": {
         "psr-4": {
@@ -33,10 +32,5 @@
         "branch-alias": {
             "dev-develop": "0.6.x-dev"
         }
-    },
-    "scripts": {
-        "analyze": "phpstan analyze --no-progress",
-        "psr12": "ecs check --no-progress-bar",
-        "psr12-fix": "ecs check --no-progress-bar --fix"
     }
 }
