@@ -22,32 +22,56 @@ parameters:
         - '#^Strict comparison using === between DOMNode and null will always evaluate to false\.$#'
 
 services:
-    -
-        class: DecodeLabs\PHPStan\Terminus\ReflectionExtension
-        tags:
-            - phpstan.broker.methodsClassReflectionExtension
-
-    -
-        class: DecodeLabs\PHPStan\Exceptional\ReflectionExtension
-        tags:
-            - phpstan.broker.methodsClassReflectionExtension
-
+    # Collections
     -
         class: DecodeLabs\PHPStan\Collections\TreeReflectionExtension
         tags:
             - phpstan.broker.propertiesClassReflectionExtension
 
+    # Exceptional
+    -
+        class: DecodeLabs\PHPStan\Exceptional\ReflectionExtension
+        tags:
+            - phpstan.broker.methodsClassReflectionExtension
+
+    # Exemplar
+    -
+        class: DecodeLabs\PHPStan\Exemplar\ElementReflectionExtension
+        tags:
+            - phpstan.broker.propertiesClassReflectionExtension
+
+    # Lucid
+    -
+        class: DecodeLabs\PHPStan\Lucid\VeneerReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension
+    -
+        class: DecodeLabs\PHPStan\Lucid\SingleContextReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+    -
+        class: DecodeLabs\PHPStan\Lucid\MultiContextReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+    -
+        class: DecodeLabs\PHPStan\Lucid\DirectContextReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+
+    # Metamorph
     -
         class: DecodeLabs\PHPStan\Metamorph\ReflectionExtension
         tags:
             - phpstan.broker.methodsClassReflectionExtension
 
+    # Tagged
     -
         class: DecodeLabs\PHPStan\Tagged\ReflectionExtension
         tags:
             - phpstan.broker.methodsClassReflectionExtension
 
+    # Terminus
     -
-        class: DecodeLabs\PHPStan\Exemplar\ElementReflectionExtension
+        class: DecodeLabs\PHPStan\Terminus\ReflectionExtension
         tags:
-            - phpstan.broker.propertiesClassReflectionExtension
+            - phpstan.broker.methodsClassReflectionExtension
