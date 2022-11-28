@@ -10,14 +10,13 @@
     }],
     "require": {
         "php": "^8.0",
-        "phpstan/phpstan": "^1",
-
-        "decodelabs/lucid": "^0.3.7"
+        "phpstan/phpstan": "^1"
     },
     "require-dev": {
-        "decodelabs/tagged": "^0.14",
         "decodelabs/exemplar": "^0.3",
+        "decodelabs/lucid": "^0.3.7",
         "decodelabs/metamorph": "^0.5",
+        "decodelabs/tagged": "^0.14",
         "decodelabs/terminus": "^0.9"
     },
     "autoload": {
