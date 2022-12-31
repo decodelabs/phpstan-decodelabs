@@ -3,7 +3,7 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/decodelabs/phpstan-decodelabs?style=flat)](https://packagist.org/packages/decodelabs/phpstan-decodelabs)
 [![Latest Version](https://img.shields.io/packagist/v/decodelabs/phpstan-decodelabs.svg?style=flat)](https://packagist.org/packages/decodelabs/phpstan-decodelabs)
 [![Total Downloads](https://img.shields.io/packagist/dt/decodelabs/phpstan-decodelabs.svg?style=flat)](https://packagist.org/packages/decodelabs/phpstan-decodelabs)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/decodelabs/phpstan-decodelabs/Integrate)](https://github.com/decodelabs/phpstan-decodelabs/actions/workflows/integrate.yml)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/decodelabs/phpstan-decodelabs/integrate.yml?branch=develop)](https://github.com/decodelabs/phpstan-decodelabs/actions/workflows/integrate.yml)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-44CC11.svg?longCache=true&style=flat)](https://github.com/phpstan/phpstan)
 [![License](https://img.shields.io/packagist/l/decodelabs/phpstan-decodelabs?style=flat)](https://packagist.org/packages/decodelabs/phpstan-decodelabs)
 
