@@ -2,19 +2,19 @@
     "name": "decodelabs/phpstan-decodelabs",
     "description": "DecodeLabs PHPStan compatibility extension",
     "type": "phpstan-extension",
-    "keywords": ["analysis"],
+    "keywords": [ "analysis" ],
     "license": "MIT",
-    "authors": [{
-        "name": "Tom Wright",
-        "email": "tom@inflatablecookie.com"
-    }],
+    "authors": [ {
+            "name": "Tom Wright",
+            "email": "tom@inflatablecookie.com"
+        } ],
     "require": {
         "php": "^8.0",
         "phpstan/phpstan": "^1"
     },
     "require-dev": {
         "decodelabs/exemplar": "^0.3",
-        "decodelabs/lucid": "^0.3.7",
+        "decodelabs/lucid": "^0.4",
         "decodelabs/metamorph": "^0.5",
         "decodelabs/tagged": "^0.14",
         "decodelabs/terminus": "^0.9"
