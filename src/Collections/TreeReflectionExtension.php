@@ -39,18 +39,10 @@ class TreeReflectionExtension implements PropertiesClassReflectionExtension
         ClassReflection $classReflection,
         string $propertyName
     ): PropertyReflectionInterface {
-        $t = $classReflection->getMethod('__set', new OutOfClassScope())->getVariants()[0]->getParameters()[0]->getType();
-
         return new PropertyReflection(
             $classReflection,
             new ObjectType($classReflection->getName()),
-            new UnionType([
-                $t,
-                new IterableType(new UnionType([
-                    new IntegerType(),
-                    new StringType()
-                ]), $t)
-            ])
+            $classReflection->getMethod('__set', new OutOfClassScope())->getVariants()[0]->getParameters()[1]->getType()
         );
     }
 }

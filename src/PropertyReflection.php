@@ -53,7 +53,7 @@ class PropertyReflection implements PropertyReflectionInterface
 
     public function getType(): Type
     {
-        if($this->writableType) {
+        if ($this->writableType) {
             return new UnionType([
                 $this->readableType,
                 $this->writableType

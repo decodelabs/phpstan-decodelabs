@@ -13,6 +13,7 @@
         "phpstan/phpstan": "^1"
     },
     "require-dev": {
+        "decodelabs/collections": "^0.8.3",
         "decodelabs/exemplar": "^0.3",
         "decodelabs/lucid": "^0.4",
         "decodelabs/metamorph": "^0.5",

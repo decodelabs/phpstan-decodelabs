@@ -1,4 +1,7 @@
+includes:
+    - ./extension.neon
 parameters:
     paths:
         - src/
+        - tests/
     level: max
