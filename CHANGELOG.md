@@ -1,3 +1,6 @@
+## v0.6.7 (2023-10-26)
+* Fixed Tree __set accept types
+
 ## v0.6.6 (2022-11-28)
 * Made lucid a dev dependency
 

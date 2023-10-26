@@ -13,18 +13,22 @@ use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertyReflection as PropertyReflectionInterface;
 use PHPStan\TrinaryLogic;
 use PHPStan\Type\Type;
+use PHPStan\Type\UnionType;
 
 class PropertyReflection implements PropertyReflectionInterface
 {
     private ClassReflection $declaringClass;
-    private Type $type;
+    private Type $readableType;
+    private ?Type $writableType = null;
 
     public function __construct(
         ClassReflection $declaringClass,
-        Type $type
+        Type $readableType,
+        ?Type $writableType = null
     ) {
         $this->declaringClass = $declaringClass;
-        $this->type = $type;
+        $this->readableType = $readableType;
+        $this->writableType = $writableType;
     }
 
     public function getDeclaringClass(): ClassReflection
@@ -49,7 +53,14 @@ class PropertyReflection implements PropertyReflectionInterface
 
     public function getType(): Type
     {
-        return $this->type;
+        if ($this->writableType) {
+            return new UnionType([
+                $this->readableType,
+                $this->writableType
+            ]);
+        }
+
+        return $this->readableType;
     }
 
     public function isReadable(): bool
@@ -69,12 +80,12 @@ class PropertyReflection implements PropertyReflectionInterface
 
     public function getReadableType(): Type
     {
-        return $this->getType();
+        return $this->readableType;
     }
 
     public function getWritableType(): Type
     {
-        return $this->getType();
+        return $this->writableType ?? $this->readableType;
     }
 
     public function canChangeTypeAfterAssignment(): bool
