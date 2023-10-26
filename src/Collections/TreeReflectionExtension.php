@@ -12,10 +12,15 @@ namespace DecodeLabs\PHPStan\Collections;
 use DecodeLabs\Collections\Tree;
 use DecodeLabs\PHPStan\PropertyReflection;
 
+use PHPStan\Analyser\OutOfClassScope;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertiesClassReflectionExtension;
 use PHPStan\Reflection\PropertyReflection as PropertyReflectionInterface;
+use PHPStan\Type\IntegerType;
+use PHPStan\Type\IterableType;
 use PHPStan\Type\ObjectType;
+use PHPStan\Type\StringType;
+use PHPStan\Type\UnionType;
 
 class TreeReflectionExtension implements PropertiesClassReflectionExtension
 {
@@ -34,6 +39,18 @@ class TreeReflectionExtension implements PropertiesClassReflectionExtension
         ClassReflection $classReflection,
         string $propertyName
     ): PropertyReflectionInterface {
-        return new PropertyReflection($classReflection, new ObjectType($classReflection->getName()));
+        $t = $classReflection->getMethod('__set', new OutOfClassScope())->getVariants()[0]->getParameters()[0]->getType();
+
+        return new PropertyReflection(
+            $classReflection,
+            new ObjectType($classReflection->getName()),
+            new UnionType([
+                $t,
+                new IterableType(new UnionType([
+                    new IntegerType(),
+                    new StringType()
+                ]), $t)
+            ])
+        );
     }
 }
