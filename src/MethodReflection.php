@@ -58,8 +58,9 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
     /**
      * @return $this
      */
-    public function setStatic(bool $flag): self
-    {
+    public function setStatic(
+        bool $flag
+    ): self {
         $this->static = $flag;
         return $this;
     }
@@ -72,8 +73,9 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
     /**
     * @return $this
     */
-    public function setPrivate(bool $flag): self
-    {
+    public function setPrivate(
+        bool $flag
+    ): self {
         $this->private = $flag;
         return $this;
     }
@@ -154,8 +156,9 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
     /**
      * @param array<ParameterReflection> $params
      */
-    public static function dumpParams(array $params): void
-    {
+    public static function dumpParams(
+        array $params
+    ): void {
         $test = [];
 
         foreach ($params as $param) {

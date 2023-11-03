@@ -16,11 +16,7 @@ use PHPStan\Analyser\OutOfClassScope;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertiesClassReflectionExtension;
 use PHPStan\Reflection\PropertyReflection as PropertyReflectionInterface;
-use PHPStan\Type\IntegerType;
-use PHPStan\Type\IterableType;
 use PHPStan\Type\ObjectType;
-use PHPStan\Type\StringType;
-use PHPStan\Type\UnionType;
 
 class TreeReflectionExtension implements PropertiesClassReflectionExtension
 {

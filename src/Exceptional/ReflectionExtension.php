@@ -26,8 +26,9 @@ class ReflectionExtension implements
 {
     protected Broker $broker;
 
-    public function setBroker(Broker $broker): void
-    {
+    public function setBroker(
+        Broker $broker
+    ): void {
         $this->broker = $broker;
     }
 

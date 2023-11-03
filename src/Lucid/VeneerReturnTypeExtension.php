@@ -26,8 +26,9 @@ class VeneerReturnTypeExtension implements
         return Lucid::class;
     }
 
-    public function isStaticMethodSupported(MethodReflection $methodReflection): bool
-    {
+    public function isStaticMethodSupported(
+        MethodReflection $methodReflection
+    ): bool {
         return $methodReflection->getName() === 'make';
     }
 
