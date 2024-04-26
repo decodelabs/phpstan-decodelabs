@@ -18,7 +18,7 @@
         "decodelabs/lucid": "^0.4",
         "decodelabs/metamorph": "^0.5",
         "decodelabs/tagged": "^0.14",
-        "decodelabs/terminus": "^0.9"
+        "decodelabs/terminus": "^0.10"
     },
     "autoload": {
         "psr-4": {

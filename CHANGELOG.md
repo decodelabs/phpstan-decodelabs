@@ -1,3 +1,4 @@
+* Updated Terminus dependency
 * Made PHP8.1 minimum version
 
 ## v0.6.7 (2023-10-26)
