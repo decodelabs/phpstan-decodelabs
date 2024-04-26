@@ -9,7 +9,7 @@
             "email": "tom@inflatablecookie.com"
         } ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "phpstan/phpstan": "^1"
     },
     "require-dev": {
@@ -18,7 +18,7 @@
         "decodelabs/lucid": "^0.4",
         "decodelabs/metamorph": "^0.5",
         "decodelabs/tagged": "^0.14",
-        "decodelabs/terminus": "^0.9"
+        "decodelabs/terminus": "^0.10"
     },
     "autoload": {
         "psr-4": {

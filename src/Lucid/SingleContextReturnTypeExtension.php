@@ -26,8 +26,9 @@ class SingleContextReturnTypeExtension implements
         return SingleContext::class;
     }
 
-    public function isMethodSupported(MethodReflection $methodReflection): bool
-    {
+    public function isMethodSupported(
+        MethodReflection $methodReflection
+    ): bool {
         return $methodReflection->getName() === 'as';
     }
 

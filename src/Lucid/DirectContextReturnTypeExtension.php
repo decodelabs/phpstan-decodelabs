@@ -26,8 +26,9 @@ class DirectContextReturnTypeExtension implements
         return DirectContext::class;
     }
 
-    public function isMethodSupported(MethodReflection $methodReflection): bool
-    {
+    public function isMethodSupported(
+        MethodReflection $methodReflection
+    ): bool {
         return $methodReflection->getName() === 'make';
     }
 
