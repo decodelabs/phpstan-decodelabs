@@ -14,10 +14,10 @@
     },
     "require-dev": {
         "decodelabs/collections": "^0.8.3",
-        "decodelabs/exemplar": "^0.3",
+        "decodelabs/exemplar": "^0.4",
         "decodelabs/lucid": "^0.4",
         "decodelabs/metamorph": "^0.5",
-        "decodelabs/tagged": "^0.14",
+        "decodelabs/tagged": "^0.15",
         "decodelabs/terminus": "^0.10"
     },
     "autoload": {
