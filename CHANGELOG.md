@@ -1,3 +1,4 @@
+* Updated Veneer Target handling
 * Updated Tagged dependency
 
 ## v0.6.8 (2024-04-26)
