@@ -1,3 +1,7 @@
+## v0.6.8 (2024-08-21)
+* Updated Veneer Target handling
+* Updated Tagged dependency
+
 ## v0.6.8 (2024-04-26)
 * Updated Terminus dependency
 * Made PHP8.1 minimum version
