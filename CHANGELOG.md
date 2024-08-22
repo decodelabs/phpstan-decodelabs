@@ -1,3 +1,4 @@
+* Fixed Exceptional named param handling
 * Updated dependencies
 
 ## v0.6.9 (2024-08-21)

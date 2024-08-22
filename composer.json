@@ -14,6 +14,7 @@
     },
     "require-dev": {
         "decodelabs/collections": "^0.9",
+        "decodelabs/exceptional": "^0.4.7",
         "decodelabs/exemplar": "^0.4",
         "decodelabs/lucid": "^0.4.7",
         "decodelabs/metamorph": "^0.6",
