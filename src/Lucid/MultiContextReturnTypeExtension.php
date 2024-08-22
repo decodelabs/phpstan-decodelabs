@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace DecodeLabs\PHPStan\Lucid;
 
 use DecodeLabs\Lucid\Provider\MultiContext;
-
 use PHPStan\Reflection\BrokerAwareExtension;
 use PHPStan\Reflection\MethodReflection;
 use PHPStan\Type\DynamicMethodReturnTypeExtension;
