@@ -1,4 +1,8 @@
-## v0.6.8 (2024-08-21)
+## v0.6.10 (2024-08-22)
+* Fixed Exceptional named param handling
+* Updated dependencies
+
+## v0.6.9 (2024-08-21)
 * Updated Veneer Target handling
 * Updated Tagged dependency
 
