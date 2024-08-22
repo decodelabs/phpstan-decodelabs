@@ -1,3 +1,4 @@
+## v0.6.10 (2024-08-22)
 * Fixed Exceptional named param handling
 * Updated dependencies
 
