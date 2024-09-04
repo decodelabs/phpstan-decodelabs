@@ -34,7 +34,7 @@
     "extra": {
         "phpstan": {
             "includes": [
-                "extension.neon"
+                "phpstan-extension.neon"
             ]
         },
         "branch-alias": {

@@ -1,3 +1,5 @@
+* Renamed extension config neon
+
 ## v0.6.11 (2024-09-04)
 * Improved PHPStan extension handling
 
