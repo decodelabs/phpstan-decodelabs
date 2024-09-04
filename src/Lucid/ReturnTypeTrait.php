@@ -11,7 +11,6 @@ namespace DecodeLabs\PHPStan\Lucid;
 
 use DecodeLabs\Lucid\Processor\ListNative as ListProcessor;
 use DecodeLabs\Lucid\Sanitizer\ValueContainer;
-
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Expr\StaticCall;
 use PHPStan\Analyser\Scope;
@@ -64,7 +63,7 @@ trait ReturnTypeTrait
         $listProc = null;
 
         if (
-            ($list = $processor instanceof ListProcessor) &&
+            ($list = ($processor instanceof ListProcessor)) &&
             null !== ($inner = $processor->getChildType())
         ) {
             $listProc = $processor;
