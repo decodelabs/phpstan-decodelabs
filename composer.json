@@ -32,6 +32,11 @@
         }
     },
     "extra": {
+        "effigy": {
+            "exports": [
+                "phpstan-extension.neon"
+            ]
+        },
         "phpstan": {
             "includes": [
                 "phpstan-extension.neon"
