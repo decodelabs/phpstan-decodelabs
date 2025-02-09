@@ -1,3 +1,5 @@
+* Added PHP8.4 to CI workflow
+
 ## v0.6.12 (2024-09-04)
 * Renamed extension config neon
 
