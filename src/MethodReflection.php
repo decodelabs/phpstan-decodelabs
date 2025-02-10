@@ -19,7 +19,7 @@ use PHPStan\TrinaryLogic;
 use PHPStan\Type\Generic\TemplateTypeMap;
 use PHPStan\Type\Type;
 
-class MethodReflection implements MethodReflectionInterface, ClassMemberReflection
+class MethodReflection implements MethodReflectionInterface
 {
     protected ClassReflection $classReflection;
     protected string $name;
@@ -27,12 +27,12 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
     protected bool $private = false;
 
     /**
-     * @var array<ParametersAcceptor>
+     * @var list<ParametersAcceptor>
      */
     protected array $variants;
 
     /**
-     * @param array<ParametersAcceptor> $variants
+     * @param list<ParametersAcceptor> $variants
      */
     public function __construct(
         ClassReflection $classReflection,
@@ -137,7 +137,7 @@ class MethodReflection implements MethodReflectionInterface, ClassMemberReflecti
 
 
     /**
-     * @param array<ParameterReflection> $params
+     * @param list<ParameterReflection> $params
      */
     public static function alterVariant(
         FunctionVariant $variant,
