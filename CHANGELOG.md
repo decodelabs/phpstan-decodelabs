@@ -1,3 +1,10 @@
+## v0.7.0 (2025-02-10)
+* Moved extensions to individual packages
+* Added ParameterReflection helper
+* Replaced Broker interface
+* Added PHP8.4 to CI workflow
+* Made PHP8.4 minimum version
+
 ## v0.6.12 (2024-09-04)
 * Renamed extension config neon
 

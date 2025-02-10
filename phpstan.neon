@@ -1,7 +1,4 @@
-includes:
-    - ./phpstan-extension.neon
 parameters:
     paths:
         - src/
-        - tests/
     level: max
