@@ -21,11 +21,6 @@
     "extra": {
         "branch-alias": {
             "dev-develop": "0.7.x-dev"
-        },
-        "effigy": {
-            "exports": [
-                "phpstan-extension.neon"
-            ]
         }
     },
     "config": {
