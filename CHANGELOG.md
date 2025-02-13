@@ -1,3 +1,5 @@
+* Updated dependencies
+
 ## v0.7.0 (2025-02-10)
 * Moved extensions to individual packages
 * Added ParameterReflection helper
