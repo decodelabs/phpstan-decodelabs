@@ -9,5 +9,15 @@
 
 Make PHPStan work with DecodeLabs libraries.
 
+## Installation
+
+This package requires PHP 8.4 or higher.
+
+Install via Composer:
+
+```bash
+composer require decodelabs/phpstan-decodelabs --dev
+```
+
 ## Licensing
 This package is licensed under the MIT License. See [LICENSE](./LICENSE) for the full license text.
