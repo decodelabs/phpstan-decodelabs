@@ -2,16 +2,24 @@
     "name": "decodelabs/phpstan-decodelabs",
     "description": "DecodeLabs PHPStan analysis extension",
     "type": "phpstan-extension",
-    "keywords": [ "dev", "static-analysis" ],
+    "keywords": [
+        "dev",
+        "static-analysis"
+    ],
     "license": "MIT",
-    "authors": [ {
+    "authors": [
+        {
             "name": "Tom Wright",
             "email": "tom@inflatablecookie.com"
-        } ],
+        }
+    ],
     "require": {
         "php": "^8.4",
         "phpstan/phpstan": "^2.1.4",
         "phpstan/extension-installer": "^1.4.3"
+    },
+    "require-dev": {
+        "decodelabs/chorus": "^0.1"
     },
     "autoload": {
         "psr-4": {

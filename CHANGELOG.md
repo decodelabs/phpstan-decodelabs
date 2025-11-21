@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Unreleased
 - Updated dependencies
+- Added AGENTS.md
+- Integrated Chorus dev dependency
 - Improved doc comment headers
 - Simplified CI workflow
 
@@ -406,3 +408,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [v0.1.0](https://github.com/decodelabs/phpstan-decodelabs/commits/v0.1.0) - 14th October 2019
 
 - Added initial facade support
+
