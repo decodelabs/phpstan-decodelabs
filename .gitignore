@@ -6,4 +6,5 @@ composer.lock
 Thumbs.db
 /phpunit.xml
 /.idea
+effigy.json
 /dev
